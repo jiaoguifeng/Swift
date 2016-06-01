@@ -1,0 +1,309 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww22620\viewh18160\viewkind0
+\deftab866
+\pard\tx866\pardeftab866\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 2.17 
+\f1 \'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'d1\'a7\'cf\'b0\'b1\'ca\'bc\'c7
+\f0 \
+\
+import Foundation\
+\
+/* 
+\f1 \'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3
+\f0  */\
+/*\
+
+\f1 \'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3
+\f0 (Optional Chaining)
+\f1 \'ca\'c7\'d2\'bb\'d6\'d6\'bf\'c9\'d2\'d4\'c7\'eb\'c7\'f3\'ba\'cd\'b5\'f7\'d3\'c3\'ca\'f4\'d0\'d4\'a1\'a2\'b7\'bd\'b7\'a8\'bc\'b0\'d7\'d3\'bd\'c5\'b1\'be\'b5\'c4\'b9\'fd\'b3\'cc\'a3\'ac\'cb\'fc\'b5\'c4\'d7\'d4\'c5\'d0\'b6\'cf\'d0\'d4\'cc\'e5\'cf\'d6\'d3\'da\'c7\'eb\'c7\'f3\'ba\'cd\'b5\'f7\'d3\'c3\'b5\'c4\'c4\'bf\'b1\'ea\'b5\'b1\'c7\'b0\'bf\'c9\'c4\'dc\'ce\'aa\'bf\'d5
+\f0 (nil).
+\f1 \'c8\'e7\'b9\'fb\'d7\'d4\'c5\'d0\'b6\'cf\'b5\'c4\'c4\'bf\'b1\'ea\'d3\'d0\'d6\'b5\'a3\'ac\'c4\'c7\'c3\'b4\'b5\'f7\'d3\'c3\'be\'cd\'bb\'e1\'b3\'c9\'b9\'a6\'a3\'bb\'cf\'e0\'b7\'b4\'a3\'ac\'c8\'e7\'b9\'fb\'d1\'a1\'d4\'f1\'b5\'c4\'c4\'bf\'b1\'ea\'ce\'aa\'bf\'d5
+\f0 (nil),
+\f1 \'d4\'f2\'d5\'e2\'d6\'d6\'b5\'f7\'d3\'c3\'bd\'ab\'b7\'b5\'bb\'d8\'bf\'d5
+\f0 (nil).\
+\
+
+\f1 \'d7\'a2\'d2\'e2\'a3\'ba
+\f0 Swift
+\f1 \'b5\'c4\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'ba\'cd
+\f0 objective-c
+\f1 \'d6\'d0\'b5\'c4\'cf\'fb\'cf\'a2\'ce\'aa\'bf\'d5\'d3\'d0\'d0\'a9\'cf\'e0\'cb\'c6\'a3\'ac\'b5\'ab\'ca\'c7
+\f0 Swift
+\f1 \'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3\'d4\'da\'c8\'ce\'d2\'e2\'c0\'e0\'d0\'cd\'d6\'d0\'a3\'ac\'b2\'a2\'c7\'d2\'ca\'a7\'b0\'dc\'d3\'eb\'b7\'f1\'bf\'c9\'d2\'d4\'b1\'bb\'bc\'ec\'b2\'e2\'b5\'bd\'a1\'a3
+\f0 \
+*/\
+\
+class Person1\
+\{\
+    var residence: Residence1?\
+\}\
+\
+class Residence1\
+\{\
+    var numberOfRooms = 1\
+\}\
+\
+\
+let john = Person1()\
+\
+//let roomCount = john.residence!.numberOfRooms  
+\f1 \'c8\'e7\'b9\'fb\'c4\'e3\'cf\'eb\'ca\'b9\'d3\'c3\'c9\'f9\'c3\'f7\'b7\'fb\'a3\'a1\'c7\'bf\'d6\'c6\'b2\'f0\'b0\'fc
+\f0 (john.residence!)
+\f1 \'bb\'f1\'b5\'c3
+\f0 john.residence
+\f1 \'ca\'f4\'d0\'d4
+\f0 numberOfRooms
+\f1 \'ca\'f4\'d0\'d4\'d6\'b5\'a3\'ac\'bd\'ab\'bb\'e1\'d3\'a1\'b7\'a2\'d4\'cb\'d0\'d0\'ca\'b1\'b4\'ed\'ce\'f3\'a3\'ac\'d2\'f2\'ce\'aa\'d5\'e2\'ca\'b1\'c3\'bb\'d3\'d0\'bf\'c9\'d2\'d4\'b9\'a9\'b2\'f0\'b0\'fc\'b5\'c4
+\f0 residence
+\f1 \'d6\'b5
+\f0 \
+\
+//
+\f1 \'b5\'b1
+\f0 john.residence
+\f1 \'b2\'bb\'ce\'aa
+\f0 nil
+\f1 \'ca\'b1\'a3\'ac\'bb\'e1\'d4\'cb\'d0\'d0\'cd\'a8\'b9\'fd\'a3\'ac\'c7\'d2\'bb\'e1\'bd\'ab
+\f0 roomCount
+\f1 \'c9\'e8\'d6\'c3\'b3\'c9\'d2\'bb\'b8\'f6
+\f0 int
+\f1 \'c0\'e0\'d0\'cd\'b5\'c4\'ba\'cf\'c0\'ed\'d6\'b5\'a1\'a3\'c8\'bb\'b6\'f8\'a3\'ac\'c8\'e7\'c9\'cf\'cb\'f9\'ca\'f6\'a3\'ac\'b5\'b1
+\f0 residence
+\f1 \'ce\'aa\'bf\'d5\'ca\'b1\'a3\'ac\'bb\'e1\'b5\'bc\'d6\'c2\'d4\'cb\'d0\'d0\'ca\'b1\'b4\'ed\'ce\'f3\'a3\'a8
+\f0 fatal error: unexpectedly found nil while unwrapping an Optional value
+\f1 \'a3\'a9
+\f0 \
+\
+if let roomCount = john.residence?.numberOfRooms  //
+\f1 \'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'cc\'e1\'b9\'a9\'c1\'cb\'d2\'bb\'d6\'d6\'c1\'ed\'d2\'bb\'b8\'f6\'bb\'f1\'b5\'c3
+\f0 numberOfRoom
+\f1 \'b5\'c4\'b7\'bd\'b7\'a8\'a1\'a3\'c0\'fb\'d3\'c3\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'a3\'ac\'ca\'b9\'d3\'c3\'ce\'ca\'ba\'c3\'c0\'b4\'cc\'e6\'b4\'fa\'d4\'ad\'c0\'b4\'a3\'a1\'b5\'c4\'ce\'bb\'d6\'c3\'a3\'ba
+\f0 \
+\{\
+    println("John's residence has \\(roomCount) room(s)")\
+\}\
+else\
+\{\
+    println("unable to retrive the number of rooms")\
+\}\
+\
+//
+\f1 \'d2\'f2\'ce\'aa\'d5\'e2\'d6\'d6\'b3\'a2\'ca\'d4\'bb\'f1\'b5\'c3
+\f0 numberOfRooms
+\f1 \'b5\'c4\'b2\'d9\'d7\'f7\'bf\'c9\'c4\'dc\'ca\'a7\'b0\'dc\'a3\'ac\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b7\'b5\'bb\'d8
+\f0 int
+\f1 \'a3\'bf\'c0\'e0\'d0\'cd\'d6\'b5\'a3\'ac\'bb\'f2\'d5\'df\'b3\'c6\'d7\'f7
+\f0 \'93
+\f1 \'d7\'d4\'c5\'d0\'b6\'cf
+\f0 Int\'94
+\f1 \'a1\'a3\'b5\'b1
+\f0 residence
+\f1 \'ca\'c7\'bf\'d5\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'d1\'a1\'d4\'f1
+\f0 Int
+\f1 \'bd\'ab\'bb\'e1\'ce\'aa\'bf\'d5\'a3\'ac\'d2\'f2\'b4\'cb\'bb\'e1\'b3\'f6\'cf\'d6\'ce\'de\'b7\'a8\'b7\'c3\'ce\'ca
+\f0 numberOfRooms
+\f1 \'b5\'c4\'c7\'e9\'bf\'f6\'a1\'a3
+\f0 \
+\
+\
+//
+\f1 \'ce\'aa\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b6\'a8\'d2\'e5\'c4\'a3\'b0\'e5\'c0\'e0
+\f0 \
+  //
+\f1 \'ba\'f3\'c3\'e6\'b5\'c4\'b4\'fa\'c2\'eb\'b6\'a8\'d2\'e5\'c1\'cb\'cb\'c4\'b8\'f6\'bd\'ab\'d4\'da\'ba\'f3\'c3\'e6\'ca\'b9\'d3\'c3\'b5\'c4\'c4\'a3\'b0\'e5\'c0\'e0\'a3\'ac\'c6\'e4\'d6\'d0\'b0\'fc\'c0\'a8\'b6\'e0\'b2\'e3\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'a1\'a3\'d5\'e2\'d0\'a9\'c0\'e0\'d3\'c9\'c9\'cf\'c3\'e6\'b5\'c4
+\f0 Person
+\f1 \'ba\'cd
+\f0 Residence
+\f1 \'c4\'a3\'d0\'cd\'cd\'a8\'b9\'fd\'cc\'ed\'bc\'d3\'d2\'bb\'b8\'f6
+\f0 Room
+\f1 \'ba\'cd\'d2\'bb\'b8\'f6
+\f0 Address
+\f1 \'c0\'e0\'cd\'d8\'d5\'b9\'b5\'c4\'a1\'a3
+\f0 \
+\
+//Person
+\f1 \'c0\'e0\'b6\'a8\'d2\'e5\'ba\'cd\'d6\'ae\'c7\'b0\'cf\'e0\'cd\'ac
+\f0 \
+\
+class Person\
+\{\
+    var residence: Residence?\
+\}\
+\
+class Residence\
+\{\
+    var rooms = [Room]()\
+    var numberOfRooms: Int\
+    \{\
+       return rooms.count\
+    \}\
+    \
+    subscript(i: Int) -> Room\
+    \{\
+        return rooms[i]\
+    \}\
+    \
+    func printNumberOfRooms()\
+    \{\
+        println("The number of rooms is \\(numberOfRooms)")\
+    \}\
+    \
+    var address: Address?\
+\}\
+\
+class Room\
+\{\
+    let name: String\
+    init(name: String)\
+    \{\
+        self.name = name\
+    \}\
+\}\
+\
+class Address\
+\{\
+    var buildingName: String?\
+    var buildingNumber: String?\
+    var street: String?\
+    func buildingIdentifier() -> String?\
+    \{\
+        if buildingName != nil\
+        \{\
+            return buildingName\
+        \}\
+        else if buildingNumber != nil\
+        \{\
+            return buildingNumber\
+        \}\
+        else\
+        \{\
+            return nil\
+        \}\
+    \}\
+\}\
+\
+//
+\f1 \'cd\'a8\'b9\'fd\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b5\'f7\'d3\'c3\'ca\'f4\'d0\'d4
+\f0 \
+\
+let johns = Person()\
+if let roomCount = johns.residence?.numberOfRooms\
+\{\
+    println("John's residence has \\(roomCount) room(s)")\
+\}\
+else\
+\{\
+    println("unable to retrive the number of rooms")\
+\}\
+\
+//
+\f1 \'cd\'a8\'b9\'fd\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b5\'f7\'d3\'c3\'b7\'bd\'b7\'a8
+\f0 \
+/*\
+
+\f1 \'c4\'e3\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'c0\'b4\'b5\'f7\'d3\'c3\'d7\'d4\'c5\'d0\'b6\'cf\'d6\'b5\'b5\'c4\'b7\'bd\'b7\'a8\'b2\'a2\'bc\'ec\'b2\'e2\'b7\'bd\'b7\'a8\'b5\'f7\'d3\'c3\'ca\'c7\'b7\'f1\'b3\'c9\'b9\'a6\'a1\'a3\'bc\'b4\'ca\'b9\'d5\'e2\'b8\'f6\'b7\'bd\'b7\'a8\'c3\'bb\'d3\'d0\'b7\'b5\'bb\'d8\'d6\'b5\'a3\'ac\'c4\'e3\'d2\'c0\'c8\'bb\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'c0\'b4\'b4\'ef\'b3\'c9\'d5\'e2\'d2\'bb\'c4\'bf\'b5\'c4\'a1\'a3
+\f0 \
+\
+func printNumberOfRooms()\
+\{\
+   println("The number of rooms is \\(numberOfRooms)")\
+\}\
+\
+
+\f1 \'d5\'e2\'b8\'f6\'b7\'bd\'b7\'a8\'c3\'bb\'d3\'d0\'b7\'b5\'bb\'d8\'d6\'b5\'a1\'a3\'b5\'ab\'ca\'c7\'a3\'ac\'c3\'bb\'d3\'d0\'b7\'b5\'bb\'d8\'d6\'b5\'c0\'e0\'d0\'cd\'b5\'c4\'ba\'af\'ca\'fd\'ba\'cd\'b7\'bd\'b7\'a8\'d3\'d0\'d2\'bb\'b8\'f6\'d2\'fe\'ca\'bd\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5\'c0\'e0\'d0\'cd
+\f0 void\
+\
+
+\f1 \'c8\'e7\'b9\'fb\'c4\'e3\'c0\'fb\'d3\'c3\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b5\'f7\'d3\'c3\'b4\'cb\'b7\'bd\'b7\'a8\'a3\'ac\'d5\'e2\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5\'c0\'e0\'d0\'cd\'bd\'ab\'ca\'c7
+\f0 void
+\f1 \'a3\'bf\'a3\'ac\'b6\'f8\'b2\'bb\'ca\'c7
+\f0 void
+\f1 \'a3\'ac\'d2\'f2\'ce\'aa\'b5\'b1\'cd\'a8\'b9\'fd\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b5\'f7\'d3\'c3\'b4\'cb\'b7\'bd\'ca\'bd\'b7\'b5\'bb\'d8\'d6\'b5\'d7\'dc\'ca\'c7\'d7\'d4\'c5\'d0\'b6\'cf\'c0\'e0\'d0\'cd\'a1\'a3
+\f0 \
+*/\
+\
+if johns.residence?.printNumberOfRooms() != nil\
+\{\
+    println("It was possible to print the number of rooms")\
+\}\
+else\
+\{\
+    println("It was not possible to print the number of rooms")\
+\}\
+\
+//
+\f1 \'ca\'b9\'d3\'c3\'d7\'d4\'c5\'d0\'b6\'cf\'c1\'b4\'bd\'d3\'b5\'f7\'d3\'c3\'d7\'d3\'bd\'c5\'b1\'be
+\f0 \
+\
+if let firstRoomName = johns.residence?[0].name\
+\{\
+   println("The first room name is \\(firstRoomName).")\
+\}\
+else\
+\{\
+    println("unable to retrive the first room name.") //
+\f1 \'b4\'f2\'d3\'a1\'d5\'e2\'b8\'f6
+\f0 \
+\}\
+\
+let johnsHouse = Residence()\
+\
+johnsHouse.rooms.append(Room(name: "Living room"))\
+johnsHouse.rooms.append(Room(name: "Kitchen"))\
+\
+johns.residence = johnsHouse\
+\
+if let firstRoomName = johns.residence?[0].name\
+\{\
+    println("The first room name is \\(firstRoomName).")\
+\}\
+else\
+\{\
+    println("unable to retrive the first room name.") //
+\f1 \'b4\'f2\'d3\'a1\'d5\'e2\'b8\'f6
+\f0 \
+\}\
+\
+//
+\f1 \'c1\'ac\'bd\'d3\'b6\'e0\'b2\'e3\'c1\'b4\'bd\'d3
+\f0 \
+if let johnsStreet = johns.residence?.address?.street\
+\{\
+    println("Johns's street name is \\(johnsStreet)")\
+\}\
+else\
+\{\
+    println("Unable to retrieve the address.")\
+\}\
+\
+let johnsAddress = Address()\
+johnsAddress.buildingNumber = "The Larches"\
+johnsAddress.street = "Laurel Street"\
+johns.residence!.address = johnsAddress\
+\
+if let johnsStreet = johns.residence?.address?.street\
+\{\
+    println("Johns's street name is \\(johnsStreet)")\
+\}\
+else\
+\{\
+    println("Unable to retrieve the address.")\
+\}\
+\
+//
+\f1 \'c1\'b4\'bd\'d3\'d7\'d4\'c5\'d0\'b6\'cf\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'b7\'bd\'b7\'a8
+\f0 \
+if let buildingIdentifier = johns.residence?.address?.buildingIdentifier()\
+\{\
+    println("John's building identifier is \\(buildingIdentifier).")\
+\}\
+\
+if let upper = johns.residence?.address?.buildingIdentifier()?.uppercaseString\
+\{\
+    println("John's uppercase building identifier is \\(upper).")\
+\}\
+\
+}

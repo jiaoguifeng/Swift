@@ -1,0 +1,198 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww22620\viewh18160\viewkind0
+\deftab866
+\pard\tx866\pardeftab866\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 2.23 
+\f1 \'b8\'df\'bc\'b6\'d4\'cb\'cb\'e3\'b7\'fb\'d1\'a7\'cf\'b0\'b1\'ca\'bc\'c7
+\f0 \
+\
+import Foundation\
+\
+/* 
+\f1 \'b8\'df\'bc\'b6\'d4\'cb\'cb\'e3\'b7\'fb
+\f0  */\
+/*\
+Swift
+\f1 \'b5\'c4\'ca\'fd\'d6\'b5\'bc\'c6\'cb\'e3\'c4\'ac\'c8\'cf\'ca\'c7\'b2\'bb\'bf\'c9\'d2\'e7\'b3\'f6\'b5\'c4\'a1\'a3\'d2\'e7\'b3\'f6\'d0\'d0\'ce\'aa\'bb\'e1\'b1\'bb\'b2\'b6\'bb\'f1\'b2\'a2\'b1\'a8\'b8\'e6\'ce\'aa\'b4\'ed\'ce\'f3\'a1\'a3\'c4\'e3\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3
+\f0 Swift
+\f1 \'ce\'aa\'c4\'e3\'d7\'bc\'b1\'b8\'b5\'c4\'c1\'ed\'d2\'bb\'cc\'d7\'c4\'ac\'c8\'cf\'d4\'ca\'d0\'ed\'d2\'e7\'b3\'f6\'b5\'c4\'ca\'fd\'d6\'b5\'d4\'cb\'cb\'e3\'b7\'fb\'a3\'ac\'c8\'e7\'bf\'c9\'d2\'e7\'b3\'f6
+\f0 &+
+\f1 \'a1\'a3\'cb\'f9\'d3\'d0\'d4\'ca\'d0\'ed\'d2\'e7\'b3\'f6\'b5\'c4\'d4\'cb\'cb\'e3\'b7\'fb\'b6\'bc\'ca\'c7\'d2\'d4
+\f0 &
+\f1 \'bf\'aa\'ca\'bc\'b5\'c4\'a1\'a3
+\f0 \
+\
+
+\f1 \'bf\'c9\'b6\'a8\'d6\'c6\'b5\'c4\'d4\'cb\'cb\'e3\'b7\'fb\'b2\'a2\'b2\'bb\'be\'d6\'cf\'de\'d3\'eb\'c4\'c7\'d0\'a9\'d4\'a4\'c9\'e8\'b5\'c4\'d4\'cb\'cb\'e3\'b7\'fb\'a3\'ac\'d7\'d4\'b6\'a8\'d2\'e5\'d3\'d0\'b8\'f6\'d0\'d4\'b5\'c4\'d6\'d0\'d6\'c3\'a3\'ac\'c7\'b0\'d6\'c3\'a3\'ac\'ba\'f3\'d6\'c3\'bc\'b0\'b8\'b3\'d6\'b5\'d4\'cb\'cb\'e3\'b7\'fb\'a3\'ac\'b5\'b1\'c8\'bb\'d2\'b2\'d3\'d0\'d3\'c5\'cf\'c8\'bc\'b6\'ba\'cd\'bd\'e1\'ba\'cf\'d0\'d4\'a1\'a3
+\f0 \
+*/\
+\
+\
+//
+\f1 \'ce\'bb\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+  //
+\f1 \'b0\'b4\'ce\'bb\'c8\'a1\'b7\'b4\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 ~ --
+\f1 \'b6\'d4\'d2\'bb\'b8\'f6\'b2\'d9\'d7\'f7\'ca\'fd\'b5\'c4\'c3\'bf\'d2\'bb\'ce\'bb\'b0\'b4\'ce\'bb\'c8\'a1\'b7\'b4
+\f0 \
+\
+let initialBits: UInt8 = 15//0b00001111\
+let invertedBits = ~initialBits\
+println(invertedBits)\
+\
+//
+\f1 \'b0\'b4\'ce\'bb\'d3\'eb\'d4\'cb\'cb\'e3\'b7\'fb
+\f0  &\
+let firstSixBits: UInt8 = 0b11111100\
+let lastSixBits: UInt8 = 0b00111111\
+let middleFourBits = firstSixBits & lastSixBits  //0b00111100\
+\
+//
+\f1 \'b0\'b4\'ce\'bb\'bb\'f2\'d4\'cb\'cb\'e3\'b7\'fb
+\f0  |\
+let someBits: UInt8 = 0b10110010\
+let moreBits: UInt8 = 0b01011110\
+let combinedBits = someBits | moreBits  //0b11111110\
+\
+//
+\f1 \'b0\'b4\'ce\'bb\'d2\'ec\'bb\'f2\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+let firstBits: UInt8 = 0b00010100\
+let otherBits: UInt8 = 0b00000101\
+let outputBits = firstBits ^ otherBits  //0b00010001\
+\
+//
+\f1 \'b0\'b4\'ce\'bb\'d7\'f3\'d2\'c6\'a1\'a2\'d3\'d2\'d2\'c6\'d4\'cb\'cb\'e3\'b7\'fb
+\f0  << / >>\
+  //
+\f1 \'ce\'de\'b7\'fb\'d5\'fb\'d0\'cd\'b5\'c4\'d2\'c6\'ce\'bb\'b2\'d9\'d7\'f7
+\f0 \
+\
+\
+//
+\f1 \'d3\'d0\'b7\'fb\'ba\'c5\'d5\'fb\'d0\'cd\'b5\'c4\'d2\'f2\'ce\'aa\'b2\'d9\'d7\'f7
+\f0 \
+/*\
+
+\f1 \'d3\'c9\'d3\'da\'ca\'b9\'d3\'c3\'b6\'fe\'bd\'f8\'d6\'c6\'b2\'b9\'c2\'eb\'b1\'ed\'ca\'be\'a3\'ac\'ce\'d2\'c3\'c7\'bf\'c9\'d2\'d4\'ba\'cd\'d5\'fd\'ca\'fd\'d2\'bb\'d1\'f9\'b6\'d4\'b8\'ba\'ca\'fd\'bd\'f8\'d0\'d0\'b0\'b4\'ce\'bb\'d7\'f3\'d2\'c6\'d3\'d2\'d2\'c6\'b5\'c4\'a3\'ac\'cd\'ac\'d1\'f9\'b5\'c4\'a3\'ac\'d2\'b2\'ca\'c7\'d7\'f3\'d2\'c6
+\f0 1
+\f1 \'ce\'bb\'ca\'b1\'b3\'cb\'d2\'d4
+\f0 2
+\f1 \'a3\'ac\'d3\'d2\'d2\'c6
+\f0 1
+\f1 \'ca\'b1\'b3\'fd\'d2\'d4
+\f0 2\
+
+\f1 \'b6\'d4\'d3\'d0\'b7\'fb\'ba\'c5\'d5\'fb\'ca\'fd\'b0\'b4\'ce\'bb\'d3\'d2\'d2\'c6\'ca\'b1\'a3\'ac\'ca\'b9\'d3\'c3\'b7\'fb\'ba\'c5\'ce\'bb
+\f0 (
+\f1 \'d5\'fd\'ca\'fd\'ce\'aa
+\f0 0
+\f1 \'a3\'ac\'b8\'ba\'ca\'fd\'ce\'aa
+\f0 1)
+\f1 \'cc\'ee\'b3\'e4\'bf\'d5\'b0\'d7\'ce\'bb\'a1\'a3
+\f0 \
+1111111 --> 11111111\
+0111111 --> 00111111\
+*/\
+var a: Int8 = -32\
+a = (a << 1)\
+a = (a << 1)\
+println(a)\
+\
+//
+\f1 \'d2\'e7\'b3\'f6\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+var potentialOverflow = Int16.max\
+// potentialOverflow += 1  
+\f1 \'b1\'a8\'b4\'ed\'a3\'ac\'d2\'e7\'b3\'f6\'c1\'cb
+\f0 \
+\
+var willOverflow = UInt8.max\
+println(willOverflow)\
+willOverflow = willOverflow &+ 1\
+println(willOverflow)\
+\
+var willUnderflow = UInt8.min\
+println(willUnderflow)\
+willUnderflow = willUnderflow &- 1\
+println(willUnderflow)\
+\
+//
+\f1 \'d2\'e7\'b3\'f6\'d4\'cb\'cb\'e3\'b7\'fb
+\f0   &+ &- &* &/ &%\
+\
+//
+\f1 \'d3\'c5\'cf\'c8\'bc\'b6\'ba\'cd\'bd\'e1\'ba\'cf\'d0\'d4
+\f0 \
+\
+//
+\f1 \'d4\'cb\'cb\'e3\'b7\'fb\'ba\'af\'ca\'fd
+\f0 \
+struct Vector2D\
+\{\
+    var x = 0.0, y = 0.0\
+\}\
+\
+func + (left: Vector2D, right: Vector2D) -> Vector2D\
+\{\
+    return Vector2D(x: left.x + right.x, y: left.y + right.y)\
+\}\
+\
+let vector = Vector2D(x: 3.0, y: 1.0)\
+let anotherVector = Vector2D(x: 2.0, y: 4.0)\
+let combinedVector = vector + anotherVector\
+\
+println("x: \\(combinedVector.x), y: \\(combinedVector.y)")\
+\
+\
+//
+\f1 \'d7\'e9\'ba\'cf\'b8\'b3\'d6\'b5\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+func += (inout left: Vector2D, right: Vector2D)\
+\{\
+    left = left + right\
+\}\
+\
+var original = Vector2D(x: 1.0, y: 2.0)\
+let vectorToAdd = Vector2D(x: 3.0, y: 4.0)\
+original += vectorToAdd\
+\
+println("x: \\(original.x), y: \\(original.y)")\
+\
+//
+\f1 \'c7\'b0\'d6\'c3\'ba\'cd\'ba\'f3\'d6\'c3\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+prefix func ++ (inout vector: Vector2D) -> Vector2D\
+\{\
+    vector += Vector2D(x: 1.0, y: 1.0)\
+    return vector\
+\}\
+\
+var toIncrement = Vector2D(x: 3.0, y: 4.0)\
+let afterIncrement = ++toIncrement\
+println("x: \\(afterIncrement.x), y: \\(afterIncrement.y)")\
+\
+\
+//
+\f1 \'b1\'c8\'bd\'cf\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+func == (left: Vector2D, right: Vector2D) -> Bool\
+\{\
+    return (left.x == right.x) && (left.y == right.y)\
+\}\
+\
+func != (left: Vector2D, right: Vector2D) -> Bool\
+\{\
+    return !(left == right)\
+\}\
+\
+//
+\f1 \'d7\'d4\'b6\'a8\'d2\'e5\'d4\'cb\'cb\'e3\'b7\'fb
+\f0 \
+\
+\
+}

@@ -1,0 +1,370 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf140
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww22620\viewh18160\viewkind0
+\deftab866
+\pard\tx866\pardeftab866\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 2.6 
+\f1 \'ba\'af\'ca\'fd\'d1\'a7\'cf\'b0\'b1\'ca\'bc\'c7
+\f0 \
+\
+import Foundation\
+\
+/* 
+\f1 \'ba\'af\'ca\'fd
+\f0  */\
+/*\
+
+\f1 \'ba\'af\'ca\'fd\'ca\'c7\'d6\'b4\'d0\'d0\'cc\'d8\'b6\'a8\'c8\'ce\'ce\'f1\'b5\'c4\'b4\'fa\'c2\'eb\'d7\'d4\'b0\'fc\'ba\'ac\'bf\'e9\'a1\'a3
+\f0 Swift
+\f1 \'b5\'c4\'cd\'b3\'d2\'bb\'b5\'c4\'b9\'a6\'c4\'dc\'d3\'ef\'b7\'a8\'d7\'e3\'b9\'bb\'c1\'e9\'bb\'ee\'b5\'c4\'a3\'ac\'bf\'c9\'d2\'d4\'b1\'ed\'b4\'ef\'c8\'ce\'ba\'ce\'b6\'ab\'ce\'f7\'a3\'ac\'ce\'de\'c2\'db\'ca\'c7\'b2\'bb\'b4\'f8\'b2\'ce\'ca\'fd\'c3\'fb\'b3\'c6\'b5\'c4\'bc\'f2\'b5\'a5\'b5\'c4\'d1\'f9\'ca\'bd\'ba\'af\'ca\'fd\'a3\'ac\'bb\'b9\'ca\'c7\'b4\'f8\'b1\'be\'b5\'d8\'ba\'cd\'cd\'e2\'b2\'bf\'b2\'ce\'ca\'fd\'b5\'c4\'b8\'b4\'d4\'d3\'b5\'c4
+\f0 objective-c
+\f1 \'d1\'f9\'ca\'bd\'b7\'bd\'b7\'a8
+\f0 \
+Swift
+\f1 \'d6\'d0\'b5\'c4\'c3\'bf\'d2\'bb\'b8\'f6\'ba\'af\'ca\'fd\'b6\'bc\'d3\'d0\'d2\'bb\'b8\'f6\'c0\'e0\'d0\'cd\'a3\'ac\'b0\'fc\'c0\'a8\'ba\'af\'ca\'fd\'b5\'c4\'b2\'ce\'ca\'fd\'c0\'e0\'d0\'cd\'ba\'cd\'b7\'b5\'bb\'d8\'c0\'e0\'d0\'cd\'a1\'a3
+\f0 \
+*/\
+func sayHello(personName:String) -> String\
+\{\
+    let greeting = "Hello, " + personName + "!"\
+    return greeting\
+\}\
+println(sayHello("jiaoguifeng"))\
+\
+//
+\f1 \'ba\'af\'ca\'fd\'bf\'c9\'d2\'d4\'d3\'d0\'b6\'e0\'b8\'f6\'ca\'e4\'c8\'eb\'d0\'ce\'b2\'ce\'a3\'ac\'b0\'d1\'cb\'fb\'c3\'c7\'d0\'b4\'b5\'bd\'ba\'af\'ca\'fd\'b5\'c4\'c0\'a8\'ba\'c5\'c4\'da\'a3\'ac\'b2\'a2\'d3\'c3\'b6\'ba\'ba\'c5\'b8\'f4\'bf\'aa\'a1\'a3
+\f0 \
+func halfOpenRangeLength(start:Int,end:Int) -> Int\
+\{\
+    return end - start\
+\}\
+println(halfOpenRangeLength(1,10))\
+\
+//
+\f1 \'b2\'bb\'d0\'e8\'d2\'aa\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'ba\'af\'ca\'fd
+\f0 ,\
+func sayGoodbye(personName:String)\
+\{\
+    println("Goodbye, \\(personName)")\
+\}\
+\
+sayGoodbye("SB")\
+\
+//
+\f1 \'b6\'e0\'b7\'b5\'bb\'d8\'d6\'b5\'ba\'af\'ca\'fd
+\f0 \
+func count(string : String) -> (vowels:Int,consonants:Int,others:Int)\
+\{\
+    var vowels = 0,consonants = 0,others = 0\
+    for character in string\
+    \{\
+        switch String(character).lowercaseString\
+        \{\
+            case "a","e","i","o","u":\
+                ++vowels\
+            case "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z":\
+                ++consonants\
+            default:\
+                ++others\
+        \}\
+    \}\
+    \
+    return (vowels,consonants,others)\
+\}\
+\
+let total = count("some arbitrary string!")\
+println("\\(total.vowels) vowels and \\(total.consonants) consonants")\
+\
+//
+\f1 \'cd\'e2\'b2\'bf\'b2\'ce\'ca\'fd\'c3\'fb
+\f0 \
+func join(string s1:String,toString s2:String,withJoiner joiner:String) -> String\
+\{\
+    return s1+joiner+s2\
+\}\
+\
+println(join(string: "Hello", toString: "world", withJoiner: ", "))\
+\
+//
+\f1 \'cd\'e2\'b2\'bf\'b2\'ce\'ca\'fd\'c3\'fb\'b3\'c6\'cb\'d9\'bc\'c7
+\f0 \
+func containsCharacter(#string : String, #characterToFind : Character) -> Bool //(#)
+\f1 \'d7\'f7\'ce\'aa\'c3\'fb\'d7\'d6\'b5\'c4\'c7\'b0\'d7\'ba\'a3\'ac\'d5\'e2\'be\'cd\'b8\'e6\'cb\'df
+\f0 Swift
+\f1 \'ca\'b9\'d3\'c3\'c3\'fb\'d7\'d6\'cf\'e0\'cd\'ac\'b5\'c4\'b1\'be\'b5\'d8\'ba\'cd\'cd\'e2\'b2\'bf\'b2\'ce\'ca\'fd\'c3\'fb\'b3\'c6
+\f0 \
+\{\
+    for character in string\
+    \{\
+        if character == characterToFind\
+        \{\
+            return true\
+        \}\
+    \}\
+    return false;\
+\}\
+\
+let containsAVee = containsCharacter(string: "aardvark", characterToFind: "v")\
+println(containsAVee)\
+\
+//
+\f1 \'c4\'ac\'c8\'cf\'b2\'ce\'ca\'fd\'d6\'b5
+\f0 \
+func joins(string s1:String,toString s2:String,withJoiner joiner:String = " ") -> String\
+\{\
+    return s1+joiner+s2\
+\}\
+println(joins(string: "hello", toString: "world"))\
+\
+//
+\f1 \'bf\'c9\'b1\'e4\'d0\'ce\'b2\'ce
+\f0 \
+/*\
+
+\f1 \'d2\'bb\'b8\'f6\'bf\'c9\'b1\'e4\'d0\'ce\'b2\'ce\'bf\'c9\'d2\'d4\'bd\'d3\'ca\'dc\'c1\'e3\'b8\'f6\'bb\'f2\'d5\'df\'b6\'e0\'b8\'f6\'d6\'b8\'b6\'a8\'c0\'e0\'d0\'cd\'b5\'c4\'d6\'b5\'a1\'a3\'b5\'b1\'ba\'af\'ca\'fd\'b5\'f7\'d3\'c3\'ca\'b1\'a3\'ac\'c4\'e3\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3\'bf\'c9\'b1\'e4\'d0\'ce\'b2\'ce\'c0\'b4\'d6\'b8\'b6\'a8
+\f0 --
+\f1 \'d0\'ce\'b2\'ce\'bf\'c9\'d2\'d4\'d3\'c3\'c0\'b4\'b4\'ab\'b5\'dd\'c8\'ce\'d2\'e2\'ca\'fd\'c1\'bf\'b5\'c4\'ca\'e4\'c8\'eb\'d6\'b5\'a1\'a3\'bf\'c9\'cd\'a8\'b9\'fd\'d4\'da\'d0\'ce\'b2\'ce\'b5\'c4\'c0\'e0\'d0\'cd\'c3\'fb\'ba\'f3\'c3\'e6\'b2\'e5\'c8\'eb\'c8\'fd\'b8\'f6\'b5\'e3\'b7\'fb\'ba\'c5
+\f0 (...)
+\f1 \'c0\'b4\'b1\'e0\'d0\'b4\'bf\'c9\'b1\'e4\'d0\'ce\'b2\'ce
+\f0 \
+*/\
+\
+/*\
+
+\f1 \'b4\'ab\'b5\'dd\'d6\'c1\'bf\'c9\'b1\'e4\'d0\'ce\'b2\'ce\'b5\'c4\'d6\'b5\'d4\'da\'ba\'af\'ca\'fd\'d6\'f7\'cc\'e5\'c4\'da\'ca\'c7\'d2\'d4\'ca\'ca\'b5\'b1\'c0\'e0\'d0\'cd\'b5\'c4\'ca\'fd\'d7\'e9\'b4\'e6\'d4\'da\'b5\'c4\'a1\'a3\'c0\'fd\'c8\'e7\'a3\'ac\'d2\'bb\'b8\'f6\'bf\'c9\'b1\'e4\'b2\'ce\'ca\'fd\'b5\'c4\'c3\'fb\'d7\'d6\'ce\'aa
+\f0 numbers
+\f1 \'ba\'cd\'c0\'e0\'d0\'cd
+\f0 Double...
+\f1 \'d4\'da\'ba\'af\'ca\'fd\'cc\'e5\'c4\'da\'be\'cd\'bf\'c9\'d2\'d4\'c3\'fb\'ce\'aa
+\f0 numbers
+\f1 \'c0\'e0\'d0\'cd\'ce\'aa
+\f0 [Double]
+\f1 \'b5\'c4\'b3\'a3\'c1\'bf\'d7\'e9
+\f0 \
+*/\
+func aritheticMean(numbers : Double...) -> Double\
+\{\
+    var total : Double = 0\
+    for number in numbers\
+    \{\
+        total += number\
+    \}\
+    \
+    return total / Double(numbers.count)\
+\}\
+println(aritheticMean(1,2,3,4,5))\
+\
+//
+\f1 \'b3\'a3\'c1\'bf\'d0\'ce\'b2\'ce\'ba\'cd\'b1\'e4\'c1\'bf\'d0\'ce\'b2\'ce
+\f0 \
+/*\
+
+\f1 \'ba\'af\'ca\'fd\'b5\'c4\'d0\'ce\'b2\'ce\'c4\'ac\'c8\'cf\'ca\'c7\'b3\'a3\'c1\'bf\'a1\'a3\'ca\'a6\'cd\'bd\'d4\'da\'ba\'af\'ca\'fd\'cc\'e5\'c4\'da\'b8\'c4\'b1\'e4\'ba\'af\'ca\'fd\'d0\'ce\'b2\'ce\'b5\'c4\'d6\'b5\'bb\'e1\'d2\'fd\'b7\'a2\'d2\'bb\'b8\'f6\'b1\'e0\'d2\'eb\'ca\'b1\'b4\'ed\'ce\'f3\'a3\'ac\'d2\'e2\'ce\'b6\'d7\'c5\'c4\'e3\'b2\'bb\'c4\'dc\'b8\'c4\'b1\'e4\'d0\'ce\'b2\'ce\'b5\'c4\'d6\'b5\'a1\'a3
+\f0 \
+
+\f1 \'b5\'ab\'ca\'c7\'d3\'d0\'ca\'b1\'ba\'f2\'a3\'ac\'ba\'af\'ca\'fd\'d3\'d0\'d2\'bb\'b8\'f6\'d0\'ce\'b2\'ce\'d6\'b5\'b5\'c4\'b1\'e4\'c1\'bf\'b8\'b1\'b1\'be\'ca\'c7\'b7\'c7\'b3\'a3\'d3\'d0\'d3\'c3\'b5\'c4\'a3\'ac\'c4\'fa\'bf\'c9\'d2\'d4\'d6\'b8\'b6\'a8\'d2\'bb\'b8\'f6\'bb\'f2\'d5\'df\'b6\'e0\'b8\'f6\'d0\'ce\'b2\'ce\'d7\'f7\'ce\'aa\'b1\'e4\'c1\'bf\'d0\'ce\'b2\'ce\'a3\'ac\'b4\'d3\'b6\'f8\'b1\'dc\'c3\'e2\'d4\'da\'ba\'af\'ca\'fd\'c4\'da\'b2\'bf\'ce\'aa\'d7\'d4\'bc\'ba\'b6\'a8\'d2\'e5\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4\'b1\'e4\'c1\'bf\'a1\'a3\'b1\'e4\'c1\'bf\'b2\'ce\'ca\'fd\'ca\'c7\'b1\'e4\'c1\'bf\'b6\'f8\'b7\'c7\'b3\'a3\'c1\'bf\'a3\'ac\'b2\'a2\'b8\'f8\'ba\'af\'ca\'fd\'d2\'bb\'b8\'f6\'bf\'c9\'d0\'de\'b8\'c4\'b5\'c4\'d0\'ce\'b2\'ce\'d6\'b5\'b8\'b1\'b1\'be
+\f0 \
+*/\
+func alignRight(var string :String ,count : Int ,pad :Character) -> String //string
+\f1 \'bf\'c9\'d2\'d4\'d4\'da\'ba\'af\'ca\'fd\'cc\'e5\'d6\'d0\'d0\'de\'b8\'c4
+\f0 \
+\{\
+    let amountToPad = count - countElements(string)\
+    \
+    if amountToPad < 1\
+    \{\
+        return string\
+    \}\
+    \
+    let padString = String(pad)\
+    for _ in 1...amountToPad\
+    \{\
+        string = padString + string\
+    \}\
+    return string\
+\}\
+\
+let originalString = "hello"\
+let paddedString = alignRight(originalString, 10, "-")\
+println(paddedString)\
+\
+//in-out
+\f1 \'d0\'ce\'b2\'ce
+\f0 \
+/*\
+
+\f1 \'b1\'e4\'c1\'bf\'d0\'ce\'b2\'ce\'d6\'bb\'c4\'dc\'d4\'da\'ba\'af\'ca\'fd\'b1\'be\'c9\'ed\'c4\'da\'b8\'c4\'b1\'e4\'a3\'ac\'c8\'e7\'b9\'fb\'c4\'e3\'cf\'eb\'c8\'c3\'ba\'af\'ca\'fd\'b8\'c4\'b1\'e4\'d0\'ce\'b2\'ce\'d6\'b5\'a3\'ac\'b2\'a2\'cf\'eb\'d2\'aa\'d4\'da\'ba\'af\'ca\'fd\'b5\'f7\'d3\'c3\'bd\'e1\'ca\'f8\'ba\'f3\'b1\'a3\'b3\'d6\'d0\'ce\'b2\'ce\'d6\'b5\'b5\'c4\'b8\'c4\'b1\'e4\'a3\'ac\'c4\'c7\'c4\'e3\'be\'cd\'bf\'c9\'d2\'d4\'b0\'d1\'d0\'ce\'b2\'ce\'b6\'a8\'d2\'e5\'ce\'aa
+\f0 in-out
+\f1 \'d0\'ce\'b2\'ce
+\f0 \
+
+\f1 \'cd\'a8\'b9\'fd\'d4\'da\'d0\'ce\'b2\'ce\'b6\'a8\'d2\'e5\'b5\'c4\'bf\'aa\'ca\'bc\'cc\'ed\'bc\'d3
+\f0 inout
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6\'c0\'b4\'b1\'e0\'d0\'b4
+\f0 in-out
+\f1 \'d0\'ce\'b2\'ce\'a1\'a3
+\f0 \
+
+\f1 \'c4\'e3\'d6\'bb\'c4\'dc\'b4\'ab\'b5\'dd\'d2\'bb\'b8\'f6\'b1\'e4\'c1\'bf\'d7\'f7\'ce\'aa
+\f0 in-out
+\f1 \'d0\'ce\'b2\'ce\'b6\'d4\'d3\'a6\'b5\'c4\'ca\'b5\'b2\'ce\'a1\'a3\'c4\'e3\'b2\'bb\'c4\'dc\'b4\'ab\'b5\'dd\'d2\'bb\'b8\'f6\'b1\'e4\'c1\'bf\'bb\'f2\'d5\'df\'d7\'d6\'c3\'e6\'d6\'b5\'d7\'f7\'ce\'aa\'ca\'b5\'b2\'ce\'a3\'ac\'d2\'f2\'ce\'aa\'b3\'a3\'c1\'bf\'bb\'f2\'d5\'df\'d7\'d6\'c3\'e6\'d6\'b5\'b2\'bb\'c4\'dc\'b1\'bb\'d0\'de\'b8\'c4\'a1\'a3
+\f0 \
+
+\f1 \'cc\'e1\'ca\'be\'a3\'ba
+\f0 in-out
+\f1 \'b2\'ce\'ca\'fd\'b2\'bb\'c4\'dc\'d3\'d0\'c4\'ac\'c8\'cf\'d6\'b5\'a3\'ac\'bf\'c9\'b1\'e4\'b2\'ce\'ca\'fd
+\f0 (var
+\f1 \'b6\'a8\'d2\'e5
+\f0 )
+\f1 \'b5\'c4\'b2\'ce\'ca\'fd\'d2\'b2\'b2\'bb\'c4\'dc\'b1\'bb\'b1\'ea\'bc\'c7\'ce\'aa
+\f0 inout
+\f1 \'a1\'a3\'c8\'e7\'b9\'fb\'c4\'fa\'b1\'ea\'bc\'c7\'b2\'ce\'ca\'fd\'ce\'aa
+\f0 inout
+\f1 \'a3\'ac\'cb\'fc\'b2\'bb\'c4\'dc\'cd\'ac\'ca\'c2\'b1\'bb\'b1\'ea\'bc\'c7\'ce\'aa
+\f0 var
+\f1 \'bb\'f2\'d5\'df
+\f0 let\
+*/\
+\
+func swapTwoInts(inout a : Int,inout b :Int)\
+\{\
+    let temportaryA = a\
+    a = b\
+    b = temportaryA\
+\}\
+\
+var someInt = 3\
+var anotherInt = 107\
+swapTwoInts(&someInt, &anotherInt)\
+println("someInt is now \\(someInt),and anotherInt is now \\(anotherInt)")\
+\
+//
+\f1 \'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd
+\f0 \
+   //
+\f1 \'c3\'bf\'d2\'bb\'b8\'f6\'ba\'af\'ca\'fd\'b6\'bc\'d3\'d0\'cc\'d8\'b6\'a8\'b5\'c4\'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd\'a3\'ac\'d3\'d0\'ba\'af\'ca\'fd\'b5\'c4\'d0\'ce\'b2\'ce\'c0\'e0\'d0\'cd\'ba\'cd\'b7\'b5\'bb\'d8\'d6\'b5\'b9\'b9\'b3\'c9
+\f0 \
+func addTwoInts(a:Int,b:Int) -> Int\
+\{\
+    return a+b\
+\}\
+func mutiplyTwoInts(a:Int,b:Int) -> Int\
+\{\
+    return a * b\
+\}\
+func printHelloWorld()  //
+\f1 \'d5\'e2\'b8\'f6\'ba\'af\'ca\'fd\'b5\'c4\'c0\'e0\'d0\'cd\'ca\'c7
+\f0 ()->(),
+\f1 \'bb\'f2\'d5\'df\'cb\'b5
+\f0 \'93
+\f1 \'c3\'bb\'d3\'d0\'d0\'ce\'b2\'ce\'b5\'c4\'ba\'af\'ca\'fd\'a3\'ac\'b2\'a2\'b7\'b5\'bb\'d8
+\f0 void
+\f1 \'a1\'a3
+\f0 \'94
+\f1 \'c3\'bb\'d3\'d0\'d6\'b8\'c3\'f7\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'ba\'af\'ca\'fd\'cd\'a8\'b3\'a3\'bb\'e1\'b7\'b5\'bb\'d8
+\f0 void
+\f1 \'a3\'ac\'d4\'da
+\f0 swift
+\f1 \'d6\'d0\'cf\'e0\'b5\'b1\'d3\'eb\'d2\'bb\'b8\'f6\'bf\'d5\'d4\'aa\'d7\'e9\'a3\'ac\'cf\'d4\'ca\'be\'ce\'aa
+\f0 ()\
+\{\
+    println("hello,world")\
+\}\
+\
+//
+\f1 \'ca\'b9\'d3\'c3\'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd
+\f0 \
+var mathFunction : (Int,Int) -> Int = mutiplyTwoInts\
+println("Result : \\(mathFunction(2,3))")\
+\
+let anotherMathFunction = addTwoInts //Swift
+\f1 \'d7\'d4\'b6\'af\'cd\'c6\'b6\'cf\'ba\'af\'ca\'fd\'b5\'c4\'c0\'e0\'d0\'cd
+\f0 \
+\
+//
+\f1 \'d7\'f7\'ce\'aa\'d0\'ce\'b2\'ce\'c0\'e0\'d0\'cd\'b5\'c4\'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd
+\f0 \
+func printMathResult(mathFunction:(Int,Int) -> Int,a:Int,b:Int)\
+\{\
+    println("Result:\\(mathFunction(a,b))")\
+\}\
+\
+printMathResult(mutiplyTwoInts,3,5)\
+\
+//
+\f1 \'d7\'f7\'ce\'aa\'b7\'b5\'bb\'d8\'c0\'e0\'d0\'cd\'b5\'c4\'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd
+\f0 \
+/*\
+
+\f1 \'c4\'e3\'bf\'c9\'d2\'d4\'bd\'ab\'d2\'bb\'b8\'f6\'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd\'d7\'f7\'ce\'aa\'c1\'ed\'d2\'bb\'b8\'f6\'ba\'af\'ca\'fd\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5\'c0\'e0\'d0\'cd\'a1\'a3\'c4\'e3\'bf\'c9\'d2\'d4\'d4\'da\'b7\'b5\'bb\'d8\'ba\'af\'ca\'fd\'b5\'c4\'b7\'b5\'bb\'d8\'bc\'fd\'cd\'b7
+\f0 (->)
+\f1 \'ba\'f3\'c3\'e6\'c1\'a2\'bf\'cc\'b1\'e0\'d0\'b4\'d2\'bb\'b8\'f6\'cd\'ea\'d5\'fb\'b5\'c4\'ba\'af\'ca\'fd\'c0\'e0\'d0\'cd\'c0\'b4\'ca\'b5\'cf\'d6
+\f0 \
+*/\
+func stepForward(input:Int) -> Int\
+\{\
+    return input + 1\
+\}\
+func stepBackward(input:Int) -> Int\
+\{\
+    return input - 1\
+\}\
+\
+func chooseStepFunction(backwards:Bool) -> (Int)->Int\
+\{\
+    return backwards ? stepBackward:stepForward\
+\}\
+\
+var currentValue = 3\
+let moveNearToZero = chooseStepFunction(currentValue > 0)\
+\
+println("Counting to zero:")\
+while currentValue != 0\
+\{\
+    println("\\(currentValue)")\
+    currentValue = moveNearToZero(currentValue)\
+\}\
+\
+println("zero!")\
+\
+//
+\f1 \'c7\'b6\'cc\'d7\'ba\'af\'ca\'fd
+\f0 \
+/*\
+
+\f1 \'c6\'f9\'bd\'f1\'ce\'aa\'d6\'b9\'cb\'f9\'d3\'d0\'c4\'e3\'d4\'da\'b1\'be\'d5\'c2\'d3\'f6\'b5\'bd\'b5\'c4\'ba\'af\'ca\'fd\'b6\'bc\'ca\'c7\'c8\'ab\'be\'d6\'ba\'af\'ca\'fd\'a3\'ac\'d4\'da\'c8\'ab\'be\'d6\'d7\'f7\'d3\'c3\'d3\'f2\'cf\'c2\'b6\'a8\'d2\'e5\'a1\'a3\'c6\'e4\'ca\'b5\'c4\'e3\'bb\'b9\'bf\'c9\'d2\'d4\'d4\'da\'c6\'e4\'cb\'fb\'ba\'af\'ca\'fd\'cc\'e5\'d6\'d0\'b6\'a8\'d2\'e5\'ba\'af\'ca\'fd\'a3\'ac\'b1\'bb\'b3\'c9\'ce\'aa\'c7\'b6\'cc\'d7\'ba\'af\'ca\'fd
+\f0 \
+
+\f1 \'c7\'b6\'cc\'d7\'ba\'af\'ca\'fd\'b6\'d4\'cd\'e2\'bd\'e7\'ca\'c7\'d2\'fe\'b2\'d8\'b5\'c4\'a3\'ac\'b5\'ab\'c8\'d4\'c8\'bb\'bf\'c9\'d2\'d4\'cd\'a8\'b9\'fd\'b0\'fc\'b9\'fc\'b5\'c4\'ba\'af\'ca\'fd\'b5\'f7\'d3\'c3\'ba\'cd\'ca\'b9\'d3\'c3\'cb\'fc\'a1\'a3
+\f0 enclosing function
+\f1 \'d2\'b2\'bf\'c9\'d2\'d4\'b7\'b5\'bb\'d8\'d2\'bb\'b8\'f6\'c7\'b6\'cc\'d7\'ba\'af\'ca\'fd\'a3\'ac\'d2\'d4\'b1\'e3\'d4\'da\'c6\'e4\'cb\'fb\'d7\'f7\'d3\'c3\'d3\'f2\'d6\'d0\'ca\'b9\'d3\'c3\'c7\'b6\'cc\'d7\'ba\'af\'ca\'fd
+\f0 \
+*/\
+func chooseStepFunction1(backwards:Bool) -> (Int)->Int\
+\{\
+    func stepForward1(input:Int)-> Int\
+    \{\
+        return input + 1\
+    \}\
+    \
+    func stepBackward1(input:Int)->Int\
+    \{\
+        return input - 1\
+    \}\
+    \
+    return backwards ? stepBackward1:stepForward1\
+\}\
+\
+var currentValue1 = -4\
+let moveNearToZero1 = chooseStepFunction1(currentValue1 > 0)\
+\
+while currentValue1 != 0\
+\{\
+    println("\\(currentValue1)...")\
+    currentValue1 = moveNearToZero1(currentValue1)\
+\}\
+println("zero!")\
+\
+}
