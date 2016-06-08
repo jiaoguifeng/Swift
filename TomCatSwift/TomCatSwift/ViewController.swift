@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     //定义变量，包括@IBOutlet
     @IBOutlet var imageViewCat: UIImageView!
     var picCounts: NSDictionary?
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //初始化变量可以放在viewdidload或者init中
         let path: String = NSBundle.mainBundle().pathForResource("tom", ofType: "plist")!
         picCounts = NSDictionary.init(contentsOfFile: path)
     }
